@@ -7,7 +7,10 @@ import { storeToRefs } from "pinia";
 // });
 
 const addressStore = useAddressStore();
+
 const { count } = storeToRefs(addressStore);
+
+const { addCount, info } = addressStore;
 
 // console.log(addressStore);
 console.log(count);
@@ -17,10 +20,11 @@ console.log(count);
 <template>
   <div>
     <h2>店家地址</h2>
+    index: {{ info.index }}
     <h3>count: {{ count }}</h3>
 
     <div>
-      <button @click="addressStore.addCount">click</button>
+      <button @click="addCount">click</button>
       <NuxtLink to="/">回到首頁</NuxtLink>
       <NuxtLink to="/about">關於我們</NuxtLink>
     </div>

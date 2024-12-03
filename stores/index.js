@@ -4,6 +4,10 @@ export const useAddressStore = defineStore("address", () => {
     const count = ref(0);
     const name = ref('Mike');
 
+    const info = reactive({
+        index: 0,
+    });
+
     const double = computed(() => count.value * 2);
 
     const addCount = () => {
@@ -13,6 +17,7 @@ export const useAddressStore = defineStore("address", () => {
     return{
         count,
         name,
+        info,
         double,
         addCount
     };

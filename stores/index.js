@@ -15,10 +15,15 @@ export const useAddressStore = defineStore("address", () => {
         roomArr.value = res.data;
     };
 
+    const setId = () => {
+        Id.value = 123;
+    }
+
     return {
         roomArr,
         Id,
         IdTitle,
         getDataList,
+        setId
     };
 });

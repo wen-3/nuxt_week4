@@ -8,9 +8,13 @@ import { storeToRefs } from "pinia";
 
 const store = useAddressStore();
 
-const { getDataList } = store;
+const { getDataList, setId } = store;
 
-const { IdTitle, roomArr } = storeToRefs(store);
+const { IdTitle, roomArr} = storeToRefs(store);
+
+const changeId = () => {
+  setId();
+};
 
 </script>
 
@@ -25,6 +29,7 @@ const { IdTitle, roomArr } = storeToRefs(store);
 
     <div>
       <button @click="getDataList">click</button>
+      <button @click="changeId">改變id</button>
       <NuxtLink to="/">回到首頁</NuxtLink>
       <NuxtLink to="/about">關於我們</NuxtLink>
     </div>

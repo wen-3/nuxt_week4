@@ -28,49 +28,19 @@ useHead({
   ],
 });
 
-// console.log(process.env.WEB_URL);
 
-// const config = useRuntimeConfig();
-// console.log("config=>", config);
-// console.log("config.public=>", config.public);
-
-// if (process.server) {
-//   console.log("server token:", config.TOKEN);
-// }
-
-// if (process.client) {
-//   console.log("A");
-// }
-
-if (import.meta.client) {
-  // 在 client 端
-  console.log("在 client 端");
-} else {
-  // 在 server 端
-  console.log("在 server 端");
-}
-
-// onMounted(() =>{
-//   console.log("A");
-// })
 </script>
 
 <template>
   <div>
     <h1>首頁</h1>
 
-    <ClientOnly>
-      <h1>這邊只會在 Client 端出現</h1>
-    </ClientOnly>
-
-    <DevOnly>
-      <h1>這邊只會在 dev 模式會出現</h1>
-    </DevOnly>
-
-    <NuxtLink to="/about">關於我們</NuxtLink>
-    <NuxtLink to="/address">聯絡地址</NuxtLink>
-    <NuxtLink to="/courses/123/about">課程列表</NuxtLink>
-    <NuxtLink to="/user-mike">使用者頁面</NuxtLink>
+    <div>
+      <NuxtLink to="/about">關於我們</NuxtLink>
+      <NuxtLink to="/address">聯絡地址</NuxtLink>
+      <NuxtLink to="/courses/123/about">課程列表</NuxtLink>
+      <NuxtLink to="/user-mike">使用者頁面</NuxtLink>
+    </div>
   </div>
 </template>
 

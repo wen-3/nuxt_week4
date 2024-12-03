@@ -28,12 +28,14 @@ useHead({
   ],
 });
 
+const { $hello } = useNuxtApp();
 
 </script>
 
 <template>
   <div>
     <h1>首頁</h1>
+    <h2>{{ $hello("Mike 老師") }}</h2>
 
     <div>
       <NuxtLink to="/about">關於我們</NuxtLink>

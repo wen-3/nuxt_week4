@@ -6,25 +6,25 @@ import { storeToRefs } from "pinia";
 //   },
 // });
 
-const addressStore = useAddressStore();
+const store = useAddressStore();
 
-const { count } = storeToRefs(addressStore);
+const { getDataList } = store;
 
-const { addCount, info } = addressStore;
-
-// console.log(addressStore);
-console.log(count);
+const { IdTitle, roomArr } = storeToRefs(store);
 
 </script>
 
 <template>
   <div>
     <h2>店家地址</h2>
-    index: {{ info.index }}
-    <h3>count: {{ count }}</h3>
+
+    <h3>{{ IdTitle }}</h3>
+    <pre>
+      {{ roomArr }}
+    </pre>
 
     <div>
-      <button @click="addCount">click</button>
+      <button @click="getDataList">click</button>
       <NuxtLink to="/">回到首頁</NuxtLink>
       <NuxtLink to="/about">關於我們</NuxtLink>
     </div>

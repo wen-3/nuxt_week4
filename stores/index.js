@@ -1,39 +1,24 @@
 import { defineStore } from "pinia";
+import axios from "axios";
 
 export const useAddressStore = defineStore("address", () => {
-    const count = ref(0);
-    const name = ref('Mike');
+    const roomArr = ref([]);
 
-    const info = reactive({
-        index: 0,
-    });
+    const Id = ref(0);
 
-    const double = computed(() => count.value * 2);
+    const IdTitle = computed(() => `當前 ID: ${Id.value}`);
 
-    const addCount = () => {
-        count.value += 1;
+    const getDataList = async () => {
+        const res = await axios.get(
+            "https://nuxr3.zeabur.app/api/v1/rooms/"
+        );
+        roomArr.value = res.data;
     };
 
-    return{
-        count,
-        name,
-        info,
-        double,
-        addCount
+    return {
+        roomArr,
+        Id,
+        IdTitle,
+        getDataList,
     };
 });
-
-// export const useAddressStore = defineStore("address", {
-//  state: () => ({ 
-//     count: 0,
-//     name: "Mike",
-// }), 
-//  getters: {
-//    double: (state) => state.count * 2,
-//  },
-//  actions: {
-//    addCount() {
-//      this.count++;
-//    },
-//  },
-// });

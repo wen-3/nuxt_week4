@@ -30,6 +30,8 @@ useHead({
 
 const { $hello } = useNuxtApp();
 
+const date = ref(new Date());
+
 </script>
 
 <template>
@@ -37,8 +39,11 @@ const { $hello } = useNuxtApp();
     <h1>首頁</h1>
     <h2>{{ $hello("Mike 老師") }}</h2>
     <h2 v-timeformat="'2021-09-16T01:52:45.780Z'"></h2>
-
-    <div>
+    
+    <!-- <VCalendar v-model="date" /> -->
+    <VDatePicker v-model="date" mode="date" />
+    
+    <div> 
       <NuxtLink to="/about">關於我們</NuxtLink>
       <NuxtLink to="/address">聯絡地址</NuxtLink>
       <NuxtLink to="/courses/123/about">課程列表</NuxtLink>

@@ -25,5 +25,28 @@ export default defineNuxtConfig({
       ],
     }
   },
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", "@nuxtjs/i18n"],
+  i18n: {
+    strategy: "no_prefix",   // 使用更改語系不要改網址的模式
+
+    locales: [              // 語系 json 名稱設定及載入
+      {
+        code: "zh-TW",
+        file: "zh-TW.json",
+      },
+      {
+        code: "en-US",
+        file: "en-US.json",
+      },
+      {
+        code: "ja-JP",
+        file: "ja-JP.json",
+      },
+    ],
+    langDir: "language",         // 放置語系檔案的資料夾名稱
+    defaultLocale: "zh-TW",      // 預設語系
+    detectBrowserLanguage: {
+      useCookie: true,           // 啟用 cookie 紀錄語系 
+    },
+  },
 })

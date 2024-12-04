@@ -36,6 +36,7 @@ const { $hello } = useNuxtApp();
   <div>
     <h1>首頁</h1>
     <h2>{{ $hello("Mike 老師") }}</h2>
+    <h2 v-timeformat="'2021-09-16T01:52:45.780Z'"></h2>
 
     <div>
       <NuxtLink to="/about">關於我們</NuxtLink>
